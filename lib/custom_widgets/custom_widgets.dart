@@ -18,9 +18,10 @@ class CustomWidgets {
   static Widget customGridButton(
       {required String label, required BuildContext context}) {
     print(label);
+    final name = label.replaceAll(" ", "_").toLowerCase();
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(15),
         gradient: LinearGradient(colors: [
           Colors.white.withOpacity(0.5),
           Colors.black.withOpacity(0.5)
@@ -30,12 +31,10 @@ class CustomWidgets {
         color: Colors.transparent,
         child: InkWell(
           borderRadius: BorderRadius.circular(15),
-          splashColor: Colors.black,
-          overlayColor: MaterialStateProperty.all(Colors.black),
           onTap: () {
             Navigator.pushNamed(
               context,
-              "/" + label,
+              "/" + name,
             );
           },
           child: Column(
@@ -47,7 +46,7 @@ class CustomWidgets {
                 style: Theme.of(context).textTheme.headline5,
               ),
               Image.asset(
-                "assets/images/$label.png",
+                "assets/images/$name.png",
                 width: 100,
               )
             ],

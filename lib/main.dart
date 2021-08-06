@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_book/custome_widgets/custom_widgets.dart';
+import 'package:flutter_book/constants/widget_list.dart';
+import 'package:flutter_book/custom_widgets/custom_widgets.dart';
 import 'package:flutter_book/router.dart';
-import 'constants/widget_list.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,9 +10,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    print(
-        "assets/images/${"Elevated Button".replaceAll(" ", "_").toLowerCase()}.png");
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Book',
       onGenerateRoute: GeneratorRouter.generateRoute,
       initialRoute: Home.routeName,
@@ -40,16 +39,26 @@ class MyApp extends StatelessWidget {
 class Home extends StatelessWidget {
   static const routeName = "/";
   const Home({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomWidgets.customAppbar(label: "Flutter Book", ctx: context),
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: Text(
+          "Flutter Book",
+          style: Theme.of(context)
+              .textTheme
+              .headline4
+              ?.copyWith(color: Colors.black),
+        ),
+        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.code))],
+      ),
       body: GridView(
         padding: const EdgeInsets.all(25),
         children: WIDGETS_LIST.map((e) {
-          final name = e.replaceAll(" ", "_").toLowerCase();
-          return CustomWidgets.customGridButton(label: name, context: context);
+          return CustomWidgets.customGridButton(label: e, context: context);
         }).toList(),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,

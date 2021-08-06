@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_book/custome_widgets/custom_widgets.dart';
+import 'package:flutter_book/custom_widgets/custom_widgets.dart';
 
 class Outlinedbutton extends StatelessWidget {
   static const routeName = '/outlined_button';
