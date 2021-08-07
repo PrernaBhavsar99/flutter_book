@@ -9,7 +9,7 @@ class Elevatedbutton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          CustomWidgets.customAppbar(label: "Elevated Button", ctx: context),
+          CustomWidgets.customAppbar(label: "Elevated Button", ctx: context, codeIcon: true),
       body: Center(
           child: Padding(
         padding: const EdgeInsets.all(8.0),

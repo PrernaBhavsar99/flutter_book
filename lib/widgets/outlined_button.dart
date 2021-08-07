@@ -8,8 +8,8 @@ class Outlinedbutton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          CustomWidgets.customAppbar(label: "Outlined Button", ctx: context),
+      appBar: CustomWidgets.customAppbar(
+          label: "Outlined Button", ctx: context, codeIcon: true),
       body: Center(
         child: Text("Outlined Button"),
       ),

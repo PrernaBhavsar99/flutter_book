@@ -53,12 +53,11 @@ class Home extends StatelessWidget {
               .headline4
               ?.copyWith(color: Colors.black),
         ),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.code))],
       ),
       body: GridView(
         padding: const EdgeInsets.all(25),
         children: WIDGETS_LIST.map((e) {
-          return CustomWidgets.customGridButton(label: e, context: context);
+          return CustomWidgets.customGridButton(label: e, ctx: context);
         }).toList(),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,

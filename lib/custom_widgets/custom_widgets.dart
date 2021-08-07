@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_book/custom_widgets/code_viewer.dart';
 
 class CustomWidgets {
   static PreferredSizeWidget customAppbar(
-      {required String label, required BuildContext ctx}) {
+      {required String label,
+      required BuildContext ctx,
+      required bool codeIcon}) {
     return AppBar(
       centerTitle: true,
       backgroundColor: Colors.white,
@@ -11,13 +14,19 @@ class CustomWidgets {
         label,
         style: Theme.of(ctx).textTheme.headline4?.copyWith(color: Colors.black),
       ),
-      actions: [IconButton(onPressed: () {}, icon: Icon(Icons.code))],
+      actions: [
+        if (codeIcon)
+          IconButton(
+              onPressed: () {
+                Navigator.pushNamed(ctx, CodeViewer.routeName);
+              },
+              icon: Icon(Icons.code))
+      ],
     );
   }
 
   static Widget customGridButton(
-      {required String label, required BuildContext context}) {
-    print(label);
+      {required String label, required BuildContext ctx}) {
     final name = label.replaceAll(" ", "_").toLowerCase();
     return Container(
       decoration: BoxDecoration(
@@ -33,7 +42,7 @@ class CustomWidgets {
           borderRadius: BorderRadius.circular(15),
           onTap: () {
             Navigator.pushNamed(
-              context,
+              ctx,
               "/" + name,
             );
           },
@@ -43,7 +52,7 @@ class CustomWidgets {
             children: [
               Text(
                 label,
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(ctx).textTheme.headline5,
               ),
               Image.asset(
                 "assets/images/$name.png",
