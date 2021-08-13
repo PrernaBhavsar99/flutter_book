@@ -8,8 +8,8 @@ class Elevatedbutton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          CustomWidgets.customAppbar(label: "Elevated Button", ctx: context, codeIcon: true),
+      appBar: CustomWidgets.customAppbar(
+          label: "Elevated Button", ctx: context, codeIcon: true),
       body: Center(
           child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -39,6 +39,19 @@ class Elevatedbutton extends StatelessWidget {
           ],
         ),
       )),
+    );
+  }
+}
+
+class ElevatedButto extends StatelessWidget {
+  const ElevatedButto({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {},
+      child: Text("Elevated Button"),
+      autofocus: true, // Autofocus the button
     );
   }
 }

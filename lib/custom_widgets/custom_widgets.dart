@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_book/custom_widgets/code_viewer.dart';
 
@@ -25,6 +26,24 @@ class CustomWidgets {
     );
   }
 
+  static ObstructingPreferredSizeWidget customCupertinoNavBar(
+      {required String label,
+      required BuildContext ctx,
+      required bool codeIcon}) {
+    return CupertinoNavigationBar(
+      backgroundColor: Colors.white,
+      middle: Text(label),
+      trailing: codeIcon
+          ? CupertinoButton(
+              child: Icon(Icons.code),
+              onPressed: () {
+                Navigator.pushNamed(ctx, CodeViewer.routeName);
+              },
+            )
+          : null,
+    );
+  }
+
   static Widget customGridButton(
       {required String label, required BuildContext ctx}) {
     final name = label.replaceAll(" ", "_").toLowerCase();
@@ -41,10 +60,8 @@ class CustomWidgets {
         child: InkWell(
           borderRadius: BorderRadius.circular(15),
           onTap: () {
-            Navigator.pushNamed(
-              ctx,
-              "/" + name,
-            );
+            Navigator.pushNamed(ctx, "/" + name, // /elevated_button
+                arguments: {"code": "", "lable": ""});
           },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
