@@ -14,10 +14,10 @@ class _GridPaperWidgetState extends State<GridPaperWidget> {
       body: SafeArea(
         child: GridPaper(
           color: Colors.black,
-          divisions: 10,
+           divisions: 100,
           child: Container(),
           // subdivisions: 150,
-          interval: 15,
+          //interval: 15,
         ),
       ),
     );

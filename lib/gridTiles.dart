@@ -15,9 +15,9 @@ class _GridTileWidgetsState extends State<GridTileWidgets> {
           child: GridTile(
         child: Center(
           child: Text("child"),
-        ),
-        footer: Text("footer"),
-        header: Text("header"),
+        ), // this is used for child
+        footer: Text("footer"),//this will be on down of grid tile
+        header: Text("header"),//this will be on up of grid tile
       )),
     );
   }
