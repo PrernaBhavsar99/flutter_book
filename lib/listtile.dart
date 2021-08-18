@@ -54,78 +54,82 @@ class _ListTileWidgetState extends State<ListTileWidget> {
   };
   @override
   Widget build(BuildContext context) {
+    Size size=MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
           child: ListView(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: ListTile(
-                autofocus: isEnabledProperty["autofocus"]!
-                    ? property["autofocus"]!
-                    : false, //to focus on particular tile
-                contentPadding: isEnabledProperty["contentPadding"]!
-                    ? EdgeInsets.all(contentPadding)
-                    : null,
-                dense: isEnabledProperty["dense"]!
-                    ? property["dense"]
-                    : null, // to shorten then length of list tile
-                enableFeedback:
-                    isEnabledProperty["enableFeedback"]! ? property[""] : null,
-                // enabled: isEnabledProperty["enabled"]?property["enabled"]:null, //true:to activate the tile we use this  //false:to deactivate the tile we use this
-                focusColor:
-                    isEnabledProperty["focusColor"]! ? Colors.blueAccent : null,
-                //focusNode: ,
-                hoverColor:
-                    isEnabledProperty["hoverColor"]! ? Colors.black26 : null,
-                //isThreeLine:isEnabledProperty["isThreeLine"]!?property["isThreeLine"]:null,
-                // true: this will increase the size of length //false:
-                horizontalTitleGap: isEnabledProperty["horizontalTitleGap"]!
-                    ? horizontalTitleGap
-                    : null,
-                leading: isEnabledProperty["leading"]!
-                    ? Icon(Icons.leaderboard_outlined)
-                    : null, // this will be on left side of list tile
-                minLeadingWidth: isEnabledProperty["minLeadingWidth"]!
-                    ? minLeadingWidth
-                    : null,
-                minVerticalPadding: isEnabledProperty["minVerticalPadding"]!
-                    ? minVerticalPadding
-                    : null,
-                mouseCursor:
-                    isEnabledProperty["mouseCursor"]! ? mouseCursor : null,
-                onLongPress: isEnabledProperty["onLongPress"]!
-                    ? () {
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            content: Text("You have Press long on list tile")));
-                      }
-                    : null, //
-                onTap: isEnabledProperty["onTap"]!
-                    ? () {
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            content: Text("You have tapped the list Tile")));
-                      }
-                    : null, //
-                selected: isEnabledProperty["selected"]!
-                    ? property["selected"]!
-                    : false, //
-                selectedTileColor: isEnabledProperty["selectedTileColor"]!
-                    ? Colors.blue
-                    : null,
-                shape: isEnabledProperty["shape"]!
-                    ? shapeBorder
-                    : null, //RoundedRectangleBorder(),
-                subtitle:
-                    isEnabledProperty["subtitle"]! ? Text("subtitle") : null,
-                tileColor:
-                    isEnabledProperty["tileColor"]! ? Colors.cyanAccent : null,
-                title: isEnabledProperty["title"]! ? Text("title") : null,
-                trailing:
-                    isEnabledProperty["trailing"]! ? Text("trailing") : null,
-                visualDensity: isEnabledProperty["visualDensity"]!
-                    ? visualDensity
-                    : null //visualDensity,
-                ),
+          SizedBox(
+            height: size.height*0.5,
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: ListTile(
+                  autofocus: isEnabledProperty["autofocus"]!
+                      ? property["autofocus"]!
+                      : false, //to focus on particular tile
+                  contentPadding: isEnabledProperty["contentPadding"]!
+                      ? EdgeInsets.all(contentPadding)
+                      : null,
+                  dense: isEnabledProperty["dense"]!
+                      ? property["dense"]
+                      : null, // to shorten then length of list tile
+                  enableFeedback:
+                      isEnabledProperty["enableFeedback"]! ? property[""] : null,
+                  // enabled: isEnabledProperty["enabled"]?property["enabled"]:null, //true:to activate the tile we use this  //false:to deactivate the tile we use this
+                  focusColor:
+                      isEnabledProperty["focusColor"]! ? Colors.blueAccent : null,
+                  //focusNode: ,
+                  hoverColor:
+                      isEnabledProperty["hoverColor"]! ? Colors.black26 : null,
+                  //isThreeLine:isEnabledProperty["isThreeLine"]!?property["isThreeLine"]:null,
+                  // true: this will increase the size of length //false:
+                  horizontalTitleGap: isEnabledProperty["horizontalTitleGap"]!
+                      ? horizontalTitleGap
+                      : null,
+                  leading: isEnabledProperty["leading"]!
+                      ? Icon(Icons.leaderboard_outlined)
+                      : null, // this will be on left side of list tile
+                  minLeadingWidth: isEnabledProperty["minLeadingWidth"]!
+                      ? minLeadingWidth
+                      : null,
+                  minVerticalPadding: isEnabledProperty["minVerticalPadding"]!
+                      ? minVerticalPadding
+                      : null,
+                  mouseCursor:
+                      isEnabledProperty["mouseCursor"]! ? mouseCursor : null,
+                  onLongPress: isEnabledProperty["onLongPress"]!
+                      ? () {
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Text("You have Press long on list tile")));
+                        }
+                      : null, //
+                  onTap: isEnabledProperty["onTap"]!
+                      ? () {
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Text("You have tapped the list Tile")));
+                        }
+                      : null, //
+                  selected: isEnabledProperty["selected"]!
+                      ? property["selected"]!
+                      : false, //
+                  selectedTileColor: isEnabledProperty["selectedTileColor"]!
+                      ? Colors.blue
+                      : null,
+                  shape: isEnabledProperty["shape"]!
+                      ? shapeBorder
+                      : null, //RoundedRectangleBorder(),
+                  subtitle:
+                      isEnabledProperty["subtitle"]! ? Text("subtitle") : null,
+                  tileColor:
+                      isEnabledProperty["tileColor"]! ? Colors.cyanAccent : null,
+                  title: isEnabledProperty["title"]! ? Text("title") : null,
+                  trailing:
+                      isEnabledProperty["trailing"]! ? Text("trailing") : null,
+                  visualDensity: isEnabledProperty["visualDensity"]!
+                      ? visualDensity
+                      : null //visualDensity,
+                  ),
+            ),
           ),
           expanded(
               title: "Auto Focus",
