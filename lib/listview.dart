@@ -4,7 +4,7 @@ import 'package:flutter/rendering.dart';
 
 class ListViewWidget extends StatefulWidget {
   const ListViewWidget({Key? key}) : super(key: key);
-
+  static const route = "/listView";
   @override
   _ListViewWidgetState createState() => _ListViewWidgetState();
 }

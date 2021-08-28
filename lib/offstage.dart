@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
-class BaseLineWidget extends StatefulWidget {
-  const BaseLineWidget({Key? key}) : super(key: key);
+class OffStageWidget extends StatefulWidget {
+  const OffStageWidget({Key? key}) : super(key: key);
+  static const route = "/offstage";
 
   @override
-  _BaseLineWidgetState createState() => _BaseLineWidgetState();
+  _OffStageWidgetState createState() => _OffStageWidgetState();
 }
 
-class _BaseLineWidgetState extends State<BaseLineWidget> {
+class _OffStageWidgetState extends State<OffStageWidget> {
   Map<String, bool> isEnabledProperty = {
-    "baseline": true,
+    "offstage": true,
     "child": true,
-    "baselineType": true,
   };
+  bool offstage = true;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -22,7 +23,10 @@ class _BaseLineWidgetState extends State<BaseLineWidget> {
           children: [
             Container(
               height: size.height * 0.5,
-              //  child: CustomSingleChildLayout(delegate: );
+              child: Offstage(
+                child: isEnabledProperty["child"]! ? FlutterLogo() : null,
+                offstage: offstage,
+              ),
             )
           ],
         ),
@@ -51,3 +55,7 @@ class _BaseLineWidgetState extends State<BaseLineWidget> {
     );
   }
 }
+//radio 
+//slide
+//switch
+//nothing

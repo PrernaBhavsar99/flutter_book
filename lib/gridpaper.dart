@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class GridPaperWidget extends StatefulWidget {
   const GridPaperWidget({Key? key}) : super(key: key);
-
+  static const route = "/gridPaper";
   @override
   _GridPaperWidgetState createState() => _GridPaperWidgetState();
 }

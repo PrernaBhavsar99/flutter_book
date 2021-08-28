@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AlignWidget extends StatefulWidget {
   const AlignWidget({Key? key}) : super(key: key);
-
+  static const route = "/align";
   @override
   _AlignWidgetState createState() => _AlignWidgetState();
 }
@@ -19,31 +19,45 @@ class _AlignWidgetState extends State<AlignWidget> {
   };
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       body: SafeArea(
-          child: Column(
+          child: ListView(
         children: [
           Container(
+            padding: EdgeInsets.symmetric(horizontal: 12),
+            height: size.height * 0.5,
+            color: Colors.amber,
+            alignment: Alignment.center,
             child: Align(
               alignment: alignment
               //isEnabledProperty["alignment"]?alignment:null,
               ,
-              child: isEnabledProperty["child"]! ? FlutterLogo() : null,
+              child: isEnabledProperty["child"]!
+                  ? FlutterLogo(
+                      size: 200,
+                    )
+                  : null,
               heightFactor:
                   isEnabledProperty["heightFactor"]! ? heightFactor : null,
               widthFactor:
                   isEnabledProperty["widthFactor"]! ? widthFactor : null,
             ),
           ),
+          SizedBox(
+            height: 20,
+          ),
           expanded(
             title: "Alignment",
             subTitle: "To give alignment to widget",
-            singleproperty: "alignment",
+            singleProperty: "alignment",
             choose: "radio",
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Container(
-                height: 50,
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                height: 100,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
@@ -142,7 +156,7 @@ class _AlignWidgetState extends State<AlignWidget> {
                     Row(children: [
                       Text("Top Right"),
                       Radio(
-                          value: BorderDirectional(),
+                          value: Alignment.topRight,
                           groupValue: alignment,
                           onChanged: (align) {
                             setState(() {
@@ -178,7 +192,7 @@ class _AlignWidgetState extends State<AlignWidget> {
                     Row(children: [
                       Text("Fractional Offset"),
                       Radio(
-                          value: FractionalOffset(40, 20),
+                          value: FractionalOffset(20, 20),
                           groupValue: alignment,
                           onChanged: (align) {
                             setState(() {
@@ -194,18 +208,18 @@ class _AlignWidgetState extends State<AlignWidget> {
           expanded(
               title: "Child",
               subTitle: "to which child we want to add alignment",
-              singleproperty: "child",
+              singleProperty: "child",
               choose: "nothing"),
           expanded(
               title: "Height Factor",
               subTitle: "",
-              singleproperty: "heightFactor",
+              singleProperty: "heightFactor",
               choose: "slide",
               child: Slider(
                   divisions: 2,
                   value: heightFactor,
                   min: 0.0,
-                  max: 100.0,
+                  max: size.height * 0.03,
                   label: heightFactor.toString(),
                   onChanged: (value) {
                     setState(() {
@@ -215,13 +229,13 @@ class _AlignWidgetState extends State<AlignWidget> {
           expanded(
               title: "Width Factor",
               subTitle: "",
-              singleproperty: "widthFactor",
+              singleProperty: "widthFactor",
               choose: "slide",
               child: Slider(
                   divisions: 2,
                   value: widthFactor,
                   min: 0.0,
-                  max: 100.0,
+                  max: size.width * 0.2,
                   label: widthFactor.toString(),
                   onChanged: (value) {
                     setState(() {
@@ -236,16 +250,16 @@ class _AlignWidgetState extends State<AlignWidget> {
   Widget expanded({
     required String title,
     required String subTitle,
-    required String singleproperty,
+    required String singleProperty,
     required String choose,
     Widget? child,
   }) {
     return ExpansionTile(
       leading: Checkbox(
-          value: isEnabledProperty[singleproperty],
+          value: isEnabledProperty[singleProperty],
           onChanged: (value) {
             setState(() {
-              isEnabledProperty[singleproperty] = value!;
+              isEnabledProperty[singleProperty] = value!;
             });
           }),
       title: Text(title),

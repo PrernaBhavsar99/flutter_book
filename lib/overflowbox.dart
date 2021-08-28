@@ -1,36 +1,37 @@
 import 'package:flutter/material.dart';
 
-class BaseLineWidget extends StatefulWidget {
-  const BaseLineWidget({Key? key}) : super(key: key);
+class OverflowBoxWidget extends StatefulWidget {
+  const OverflowBoxWidget({ Key? key }) : super(key: key);
+  static const route = "/overflowBox";
 
   @override
-  _BaseLineWidgetState createState() => _BaseLineWidgetState();
+  _OverflowBoxWidgetState createState() => _OverflowBoxWidgetState();
 }
 
-class _BaseLineWidgetState extends State<BaseLineWidget> {
-  Map<String, bool> isEnabledProperty = {
-    "baseline": true,
+class _OverflowBoxWidgetState extends State<OverflowBoxWidget> {
+   Map<String, bool> isEnabledProperty = {
+    "alignment": true,
     "child": true,
-    "baselineType": true,
+    "heightFactor": true,
+    "widthFactor": true
   };
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Scaffold(
+      Size size = MediaQuery.of(context).size;
+    return  Scaffold(
       body: SafeArea(
         child: ListView(
           children: [
             Container(
               height: size.height * 0.5,
-              //  child: CustomSingleChildLayout(delegate: );
+             child:OverflowBox() ,
             )
           ],
         ),
       ),
     );
   }
-
-  Widget expanded({
+   Widget expanded({
     required String title,
     required String subTitle,
     required String singleProperty,
@@ -51,3 +52,7 @@ class _BaseLineWidgetState extends State<BaseLineWidget> {
     );
   }
 }
+//radio 
+//slide
+//switch
+//nothing

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class ListTileWidget extends StatefulWidget {
   const ListTileWidget({Key? key}) : super(key: key);
+  static const route = "/listTile";
 
   @override
   _ListTileWidgetState createState() => _ListTileWidgetState();
@@ -54,13 +55,13 @@ class _ListTileWidgetState extends State<ListTileWidget> {
   };
   @override
   Widget build(BuildContext context) {
-    Size size=MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
           child: ListView(
         children: [
           SizedBox(
-            height: size.height*0.5,
+            height: size.height * 0.5,
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: ListTile(
@@ -73,11 +74,13 @@ class _ListTileWidgetState extends State<ListTileWidget> {
                   dense: isEnabledProperty["dense"]!
                       ? property["dense"]
                       : null, // to shorten then length of list tile
-                  enableFeedback:
-                      isEnabledProperty["enableFeedback"]! ? property[""] : null,
+                  enableFeedback: isEnabledProperty["enableFeedback"]!
+                      ? property[""]
+                      : null,
                   // enabled: isEnabledProperty["enabled"]?property["enabled"]:null, //true:to activate the tile we use this  //false:to deactivate the tile we use this
-                  focusColor:
-                      isEnabledProperty["focusColor"]! ? Colors.blueAccent : null,
+                  focusColor: isEnabledProperty["focusColor"]!
+                      ? Colors.blueAccent
+                      : null,
                   //focusNode: ,
                   hoverColor:
                       isEnabledProperty["hoverColor"]! ? Colors.black26 : null,
@@ -100,7 +103,8 @@ class _ListTileWidgetState extends State<ListTileWidget> {
                   onLongPress: isEnabledProperty["onLongPress"]!
                       ? () {
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                              content: Text("You have Press long on list tile")));
+                              content:
+                                  Text("You have Press long on list tile")));
                         }
                       : null, //
                   onTap: isEnabledProperty["onTap"]!
@@ -120,8 +124,9 @@ class _ListTileWidgetState extends State<ListTileWidget> {
                       : null, //RoundedRectangleBorder(),
                   subtitle:
                       isEnabledProperty["subtitle"]! ? Text("subtitle") : null,
-                  tileColor:
-                      isEnabledProperty["tileColor"]! ? Colors.cyanAccent : null,
+                  tileColor: isEnabledProperty["tileColor"]!
+                      ? Colors.cyanAccent
+                      : null,
                   title: isEnabledProperty["title"]! ? Text("title") : null,
                   trailing:
                       isEnabledProperty["trailing"]! ? Text("trailing") : null,
@@ -134,12 +139,12 @@ class _ListTileWidgetState extends State<ListTileWidget> {
           expanded(
               title: "Auto Focus",
               subTitle: "To focus on particular tile",
-              singleproperty: "autofocus",
+              singleProperty: "autofocus",
               choose: "switch"),
           expanded(
               title: "Content Padding",
               subTitle: "To give padding content",
-              singleproperty: "contentPadding",
+              singleProperty: "contentPadding",
               choose: "slide",
               child: Slider(
                   divisions: 2,
@@ -153,35 +158,35 @@ class _ListTileWidgetState extends State<ListTileWidget> {
                     });
                   })),
           expanded(
-              singleproperty: "dense",
+              singleProperty: "dense",
               subTitle: "To shorten then length of list tile",
               title: "Dense",
               choose: "switch"),
           expanded(
               title: "Enable Feedback",
               subTitle:
-                  "To give vibration or anyfeedback when you tapped on listtile",
-              singleproperty: "enableFeedback",
+                  "To give vibration or any feedback when you tapped on listTile",
+              singleProperty: "enableFeedback",
               choose: "switch"),
           expanded(
               title: "Enabled ",
               subTitle: "To activate the tile we use this",
-              singleproperty: "enabled",
+              singleProperty: "enabled",
               choose: "switch"),
           expanded(
               title: "Focus Color",
               subTitle: "to focus color on particular tile",
-              singleproperty: "focusColor",
+              singleProperty: "focusColor",
               choose: "nothing"),
           expanded(
               title: "focus Node",
               subTitle: "to focus  and unfocus on particular tile",
-              singleproperty: "focusNode",
+              singleProperty: "focusNode",
               choose: "nothing"),
           expanded(
               title: "Horizontal Title Gap",
               subTitle: "this is gap between leading and trailing",
-              singleproperty: "horizontalTitleGap",
+              singleProperty: "horizontalTitleGap",
               choose: "slide",
               child: Slider(
                   divisions: 2,
@@ -197,22 +202,22 @@ class _ListTileWidgetState extends State<ListTileWidget> {
           expanded(
               title: "Hover Color",
               subTitle: "to give color when you hover it",
-              singleproperty: "hoverColor",
+              singleProperty: "hoverColor",
               choose: "nothing"),
           expanded(
               title: "is Three Line",
               subTitle: "this will increase the size of tile",
-              singleproperty: "isThreeLine",
+              singleProperty: "isThreeLine",
               choose: "switch"),
           expanded(
               title: "Leading",
               subTitle: "This will be on left side of list tile",
-              singleproperty: "leading",
+              singleProperty: "leading",
               choose: "nothing"),
           expanded(
               title: "Min Leading Width",
               subTitle: "This will select min leading width",
-              singleproperty: "minLeadingWidth",
+              singleProperty: "minLeadingWidth",
               choose: "slide",
               child: Slider(
                   divisions: 2,
@@ -228,7 +233,7 @@ class _ListTileWidgetState extends State<ListTileWidget> {
           expanded(
               title: "Min Vertical Padding",
               subTitle: "This will give minimum vertical padding",
-              singleproperty: "minVerticalPadding",
+              singleProperty: "minVerticalPadding",
               choose: "slide",
               child: Slider(
                   divisions: 2,
@@ -244,7 +249,7 @@ class _ListTileWidgetState extends State<ListTileWidget> {
           expanded(
             title: "Mouse Cursor",
             subTitle: "To give how mouse cursor will react",
-            singleproperty: "mouseCursor",
+            singleProperty: "mouseCursor",
             choose: "radio",
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -274,27 +279,27 @@ class _ListTileWidgetState extends State<ListTileWidget> {
               title: "on Long Press",
               subTitle:
                   " this is callback function called when tile is longPress",
-              singleproperty: "onLongPress",
+              singleProperty: "onLongPress",
               choose: "nothing"),
           expanded(
               title: "on Tap",
               subTitle: " this is callback function called when tile is tap",
-              singleproperty: "onTap",
+              singleProperty: "onTap",
               choose: "nothing"),
           expanded(
               title: "Selected",
               subTitle: "if we want to select or unselect to listTile",
-              singleproperty: "selected",
+              singleProperty: "selected",
               choose: "switch"),
           expanded(
               title: "Selected Tile Color",
               subTitle: "if tile is selected then color will according to this",
-              singleproperty: "selectedTileColor",
+              singleProperty: "selectedTileColor",
               choose: "nothing"),
           expanded(
             title: "Shape",
-            subTitle: "To give shape to listtile",
-            singleproperty: "shape",
+            subTitle: "To give shape to listTile",
+            singleProperty: "shape",
             choose: "radio",
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
@@ -403,27 +408,27 @@ class _ListTileWidgetState extends State<ListTileWidget> {
           expanded(
               title: "SubTitle",
               subTitle: "To give subtitle below title",
-              singleproperty: "subtitle",
+              singleProperty: "subtitle",
               choose: "nothing"),
           expanded(
               title: "Tile Color",
               subTitle: "This will give color to tile",
-              singleproperty: "tileColor",
+              singleProperty: "tileColor",
               choose: "nothing"),
           expanded(
               title: "Title",
               subTitle: "To give title",
-              singleproperty: "title",
+              singleProperty: "title",
               choose: "nothing"),
           expanded(
               title: "Trailing",
               subTitle: "this will be on right side of list tile",
-              singleproperty: "trailing",
+              singleProperty: "trailing",
               choose: "nothing"),
           expanded(
             title: "Visual Density",
-            subTitle: "to give how our list tile willlook like",
-            singleproperty: "visualDensity",
+            subTitle: "to give how our list tile will look like",
+            singleProperty: "visualDensity",
             choose: "radio",
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -515,16 +520,16 @@ class _ListTileWidgetState extends State<ListTileWidget> {
   Widget expanded({
     required String title,
     required String subTitle,
-    required String singleproperty,
+    required String singleProperty,
     required String choose,
     Widget? child,
   }) {
     return ExpansionTile(
       leading: Checkbox(
-          value: isEnabledProperty[singleproperty],
+          value: isEnabledProperty[singleProperty],
           onChanged: (value) {
             setState(() {
-              isEnabledProperty[singleproperty] = value!;
+              isEnabledProperty[singleProperty] = value!;
             });
           }),
       title: Text(title),
@@ -533,10 +538,10 @@ class _ListTileWidgetState extends State<ListTileWidget> {
         if (choose == "switch")
           SwitchListTile(
               title: Text(title),
-              value: property[singleproperty]!,
+              value: property[singleProperty]!,
               onChanged: (bool value) {
                 setState(() {
-                  property[singleproperty] = value;
+                  property[singleProperty] = value;
                 });
               }),
         if (choose == "radio") child!,

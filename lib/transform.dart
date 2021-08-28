@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
-class BaseLineWidget extends StatefulWidget {
-  const BaseLineWidget({Key? key}) : super(key: key);
+class TransformWidget extends StatefulWidget {
+  const TransformWidget({Key? key}) : super(key: key);
+  static const route = "/transform";
 
   @override
-  _BaseLineWidgetState createState() => _BaseLineWidgetState();
+  _TransformWidgetState createState() => _TransformWidgetState();
 }
 
-class _BaseLineWidgetState extends State<BaseLineWidget> {
+class _TransformWidgetState extends State<TransformWidget> {
   Map<String, bool> isEnabledProperty = {
-    "baseline": true,
+    "alignment": true,
     "child": true,
-    "baselineType": true,
+    "heightFactor": true,
+    "widthFactor": true
   };
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class _BaseLineWidgetState extends State<BaseLineWidget> {
           children: [
             Container(
               height: size.height * 0.5,
-              //  child: CustomSingleChildLayout(delegate: );
+              // child: ,
             )
           ],
         ),
@@ -51,3 +53,7 @@ class _BaseLineWidgetState extends State<BaseLineWidget> {
     );
   }
 }
+//radio 
+//slide
+//switch
+//nothing

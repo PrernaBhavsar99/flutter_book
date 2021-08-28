@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class GridTileWidgets extends StatefulWidget {
   const GridTileWidgets({Key? key}) : super(key: key);
-
+  static const route = "/gridTile";
   @override
   _GridTileWidgetsState createState() => _GridTileWidgetsState();
 }
