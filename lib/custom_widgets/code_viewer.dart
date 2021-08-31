@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'custom_widgets.dart';
-
 class CodeViewer extends StatelessWidget {
   static const routeName = '/codeViewer';
   final String label;
@@ -11,9 +9,13 @@ class CodeViewer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomWidgets.customAppbar(
-          label: label, ctx: context, codeIcon: false),
-      body: Text(code),
+      appBar: AppBar(
+        title: Text(label, style: TextStyle(color: Colors.black)),
+      ),
+      body: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: SelectableText(code,
+              style: TextStyle(color: Colors.black, fontSize: 12))),
     );
   }
 }

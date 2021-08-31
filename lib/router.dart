@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_book/custom_widgets/code_viewer.dart';
 import 'package:flutter_book/widgets/cupertino_action_sheet.dart';
+import 'package:flutter_book/widgets/cupertino_activity_indicator.dart';
 import 'package:flutter_book/widgets/outlined_button.dart';
 
 import 'main.dart';
@@ -13,21 +14,24 @@ class GeneratorRouter {
         return MaterialPageRoute(builder: (context) {
           return Home();
         });
-      case Elevatedbutton.routeName:
+      case ElevatedbuttonWidget.routeName:
         return MaterialPageRoute(builder: (context) {
-          final data = ModalRoute.of(context)!.settings.arguments;
-          return Elevatedbutton();
+          return ElevatedbuttonWidget();
         });
-      case Outlinedbutton.routeName:
-        return MaterialPageRoute(builder: (context) => Outlinedbutton());
+      case OutlinedbuttonWidget.routeName:
+        return MaterialPageRoute(builder: (context) => OutlinedbuttonWidget());
       case CupertinoActionSheetWidget.routeName:
         return MaterialPageRoute(
             builder: (context) => CupertinoActionSheetWidget());
+      case CupertinoActivityIndicatorWidget.routeName:
+        return MaterialPageRoute(
+            builder: (context) => CupertinoActivityIndicatorWidget());
       case CodeViewer.routeName:
+        final map = settings.arguments as Map;
         return MaterialPageRoute(
           builder: (context) => CodeViewer(
-            code: '',
-            label: '',
+            code: map["code"],
+            label: map["label"],
           ),
         );
       default:

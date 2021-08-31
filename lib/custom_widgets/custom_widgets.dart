@@ -6,6 +6,7 @@ class CustomWidgets {
   static PreferredSizeWidget customAppbar(
       {required String label,
       required BuildContext ctx,
+      required String code,
       required bool codeIcon}) {
     return AppBar(
       centerTitle: true,
@@ -18,10 +19,12 @@ class CustomWidgets {
       actions: [
         if (codeIcon)
           IconButton(
-              onPressed: () {
-                Navigator.pushNamed(ctx, CodeViewer.routeName);
-              },
-              icon: Icon(Icons.code))
+            onPressed: () {
+              Navigator.pushNamed(ctx, CodeViewer.routeName,
+                  arguments: {"code": code, "label": label});
+            },
+            icon: Icon(Icons.code),
+          )
       ],
     );
   }
@@ -29,6 +32,7 @@ class CustomWidgets {
   static ObstructingPreferredSizeWidget customCupertinoNavBar(
       {required String label,
       required BuildContext ctx,
+      required String code,
       required bool codeIcon}) {
     return CupertinoNavigationBar(
       backgroundColor: Colors.white,
@@ -37,7 +41,8 @@ class CustomWidgets {
           ? CupertinoButton(
               child: Icon(Icons.code),
               onPressed: () {
-                Navigator.pushNamed(ctx, CodeViewer.routeName);
+                Navigator.pushNamed(ctx, CodeViewer.routeName,
+                    arguments: {"code": code, "label": label});
               },
             )
           : null,
@@ -47,6 +52,7 @@ class CustomWidgets {
   static Widget customGridButton(
       {required String label, required BuildContext ctx}) {
     final name = label.replaceAll(" ", "_").toLowerCase();
+    // print("assets/images/$name.png");
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
@@ -60,8 +66,10 @@ class CustomWidgets {
         child: InkWell(
           borderRadius: BorderRadius.circular(15),
           onTap: () {
-            Navigator.pushNamed(ctx, "/" + name, // /elevated_button
-                arguments: {"code": "", "lable": ""});
+            Navigator.pushNamed(
+              ctx,
+              "/" + name,
+            );
           },
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -69,6 +77,7 @@ class CustomWidgets {
             children: [
               Text(
                 label,
+                textAlign: TextAlign.center,
                 style: Theme.of(ctx).textTheme.headline5,
               ),
               Image.asset(

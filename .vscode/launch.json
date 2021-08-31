@@ -13,13 +13,13 @@
         {
             "name": "flutter_book",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
         },
         {
             "name": "flutter_book (profile mode)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "flutterMode": "profile",
         }
     ]
 }
