@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_book/custom_widgets/code_viewer.dart';
+
+import 'code_viewer.dart';
 
 class CustomWidgets {
   static PreferredSizeWidget customAppbar(
@@ -16,6 +17,7 @@ class CustomWidgets {
         label,
         style: Theme.of(ctx).textTheme.headline4?.copyWith(color: Colors.black),
       ),
+      iconTheme: const IconThemeData(color: Colors.black),
       actions: [
         if (codeIcon)
           IconButton(
@@ -23,7 +25,7 @@ class CustomWidgets {
               Navigator.pushNamed(ctx, CodeViewer.routeName,
                   arguments: {"code": code, "label": label});
             },
-            icon: Icon(Icons.code),
+            icon: const Icon(Icons.code),
           )
       ],
     );
@@ -39,7 +41,7 @@ class CustomWidgets {
       middle: Text(label),
       trailing: codeIcon
           ? CupertinoButton(
-              child: Icon(Icons.code),
+              child: const Icon(Icons.code),
               onPressed: () {
                 Navigator.pushNamed(ctx, CodeViewer.routeName,
                     arguments: {"code": code, "label": label});
@@ -75,10 +77,13 @@ class CustomWidgets {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                label,
-                textAlign: TextAlign.center,
-                style: Theme.of(ctx).textTheme.headline5,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  label,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(ctx).textTheme.headline5,
+                ),
               ),
               Image.asset(
                 "assets/images/$name.png",

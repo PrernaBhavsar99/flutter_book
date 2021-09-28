@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_book/custom_widgets/custom_widgets.dart';
+
+import '../custom_widgets/custom_widgets.dart';
 
 class CupertinoActionSheetWidget extends StatelessWidget {
   static const routeName = '/cupertino_action_sheet';

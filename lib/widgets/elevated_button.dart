@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_book/custom_widgets/custom_widgets.dart';
+
+import '../custom_widgets/custom_widgets.dart';
 
 class ElevatedbuttonWidget extends StatelessWidget {
   static const routeName = '/elevated_button';
@@ -35,7 +36,7 @@ class Elevatedbutton extends StatelessWidget {
                 "Elevated Button are use to Create buttons that have tapping functionality to perform an action.",
                 style: Theme.of(context).textTheme.headline6,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -43,9 +44,9 @@ class Elevatedbutton extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {},
-                    child: Text("Elevated Button"),
+                    child: const Text("Elevated Button"),
                   ),
-                  ElevatedButton(
+                  const ElevatedButton(
                     onPressed: null,
                     child: Text("Disabled Elevated Button"),
                   ),

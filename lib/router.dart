@@ -1,31 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_book/custom_widgets/code_viewer.dart';
-import 'package:flutter_book/widgets/cupertino_action_sheet.dart';
-import 'package:flutter_book/widgets/cupertino_activity_indicator.dart';
-import 'package:flutter_book/widgets/outlined_button.dart';
+import 'package:flutter_book/widgets/cupertino_alert_dialog.dart';
 
+import 'custom_widgets/code_viewer.dart';
 import 'main.dart';
+import 'widgets/cupertino_action_sheet.dart';
+import 'widgets/cupertino_activity_indicator.dart';
 import 'widgets/elevated_button.dart';
+import 'widgets/outlined_button.dart';
 
 class GeneratorRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Home.routeName:
         return MaterialPageRoute(builder: (context) {
-          return Home();
+          return const Home();
         });
       case ElevatedbuttonWidget.routeName:
         return MaterialPageRoute(builder: (context) {
-          return ElevatedbuttonWidget();
+          return const ElevatedbuttonWidget();
         });
       case OutlinedbuttonWidget.routeName:
-        return MaterialPageRoute(builder: (context) => OutlinedbuttonWidget());
+        return MaterialPageRoute(
+            builder: (context) => const OutlinedbuttonWidget());
       case CupertinoActionSheetWidget.routeName:
         return MaterialPageRoute(
             builder: (context) => CupertinoActionSheetWidget());
       case CupertinoActivityIndicatorWidget.routeName:
         return MaterialPageRoute(
-            builder: (context) => CupertinoActivityIndicatorWidget());
+            builder: (context) => const CupertinoActivityIndicatorWidget());
+      case CupertinoAlertDialogWidget.routeName:
+        return MaterialPageRoute(
+            builder: (context) => const CupertinoAlertDialogWidget());
       case CodeViewer.routeName:
         final map = settings.arguments as Map;
         return MaterialPageRoute(

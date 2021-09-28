@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_book/custom_widgets/custom_widgets.dart';
+
+import '../custom_widgets/custom_widgets.dart';
 
 class OutlinedbuttonWidget extends StatelessWidget {
   static const routeName = '/outlined_button';
@@ -10,7 +11,7 @@ class OutlinedbuttonWidget extends StatelessWidget {
     return Scaffold(
       appBar: CustomWidgets.customAppbar(
           label: "Outlined Button", ctx: context, codeIcon: true, code: ''),
-      body: Center(
+      body: const Center(
         child: Text("Outlined Button"),
       ),
     );

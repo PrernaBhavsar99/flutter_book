@@ -1,6 +1,7 @@
-const List<String> WIDGETS_LIST = const [
+const List<String> widgetList = [
   "Elevated Button",
   "Outlined Button",
   "Cupertino Action Sheet",
-  "Cupertino Activity Indicator"
+  "Cupertino Activity Indicator",
+  "Cupertino Alert Dialog"
 ];

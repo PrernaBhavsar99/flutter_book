@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_book/constants/widget_list.dart';
-import 'package:flutter_book/custom_widgets/custom_widgets.dart';
-import 'package:flutter_book/router.dart';
+
+import 'constants/widget_list.dart';
+import 'custom_widgets/custom_widgets.dart';
+import 'router.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,17 +22,17 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         primaryColor: Colors.white,
         canvasColor: Colors.white,
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           button: TextStyle(color: Colors.white),
-          bodyText1: const TextStyle(
+          bodyText1: TextStyle(
               color: Colors.black, fontWeight: FontWeight.w500, fontSize: 26),
-          bodyText2: const TextStyle(fontWeight: FontWeight.w500, fontSize: 34),
-          headline1: const TextStyle(fontWeight: FontWeight.w500, fontSize: 32),
-          headline2: const TextStyle(fontWeight: FontWeight.w500, fontSize: 28),
-          headline3: const TextStyle(fontWeight: FontWeight.w500, fontSize: 24),
-          headline4: const TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
-          headline5: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
-          headline6: const TextStyle(fontWeight: FontWeight.w500, fontSize: 12),
+          bodyText2: TextStyle(fontWeight: FontWeight.w500, fontSize: 34),
+          headline1: TextStyle(fontWeight: FontWeight.w500, fontSize: 32),
+          headline2: TextStyle(fontWeight: FontWeight.w500, fontSize: 28),
+          headline3: TextStyle(fontWeight: FontWeight.w500, fontSize: 24),
+          headline4: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+          headline5: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+          headline6: TextStyle(fontWeight: FontWeight.w500, fontSize: 12),
         ),
       ),
     );
@@ -56,10 +59,10 @@ class Home extends StatelessWidget {
       ),
       body: GridView(
         padding: const EdgeInsets.all(25),
-        children: WIDGETS_LIST.map((e) {
+        children: widgetList.map((e) {
           return CustomWidgets.customGridButton(label: e, ctx: context);
         }).toList(),
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
           childAspectRatio: 3 / 2,
           crossAxisSpacing: 20,

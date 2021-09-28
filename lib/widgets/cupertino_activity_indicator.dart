@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_book/custom_widgets/custom_widgets.dart';
+
+import '../custom_widgets/custom_widgets.dart';
 
 class CupertinoActivityIndicatorWidget extends StatelessWidget {
   static const routeName = '/cupertino_activity_indicator';
