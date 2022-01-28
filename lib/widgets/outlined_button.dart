@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../custom_widgets/custom_widgets.dart';
 
-class OutlinedbuttonWidget extends StatelessWidget {
+class OutlinedButtonWidget extends StatelessWidget {
   static const routeName = '/outlined_button';
-  const OutlinedbuttonWidget({Key? key}) : super(key: key);
+  const OutlinedButtonWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

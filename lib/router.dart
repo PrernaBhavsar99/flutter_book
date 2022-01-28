@@ -15,13 +15,13 @@ class GeneratorRouter {
         return MaterialPageRoute(builder: (context) {
           return const Home();
         });
-      case ElevatedbuttonWidget.routeName:
+      case ElevatedButtonWidget.routeName:
         return MaterialPageRoute(builder: (context) {
-          return const ElevatedbuttonWidget();
+          return const ElevatedButtonWidget();
         });
-      case OutlinedbuttonWidget.routeName:
+      case OutlinedButtonWidget.routeName:
         return MaterialPageRoute(
-            builder: (context) => const OutlinedbuttonWidget());
+            builder: (context) => const OutlinedButtonWidget());
       case CupertinoActionSheetWidget.routeName:
         return MaterialPageRoute(
             builder: (context) => CupertinoActionSheetWidget());
@@ -34,10 +34,8 @@ class GeneratorRouter {
       case CodeViewer.routeName:
         final map = settings.arguments as Map;
         return MaterialPageRoute(
-          builder: (context) => CodeViewer(
-            code: map["code"],
-            label: map["label"],
-          ),
+          builder: (context) =>
+              CodeViewer(code: map["code"], label: map["label"]),
         );
       default:
         return MaterialPageRoute(

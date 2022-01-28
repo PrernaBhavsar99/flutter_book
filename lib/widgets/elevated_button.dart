@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 import '../custom_widgets/custom_widgets.dart';
 
-class ElevatedbuttonWidget extends StatelessWidget {
+class ElevatedButtonWidget extends StatelessWidget {
   static const routeName = '/elevated_button';
-  const ElevatedbuttonWidget({Key? key}) : super(key: key);
+  const ElevatedButtonWidget({Key? key}) : super(key: key);
 
   final String code = '''
-class Elevatedbutton extends StatelessWidget {
-  const Elevatedbutton({Key? key}) : super(key: key);
+class ElevatedButton extends StatelessWidget {
+  const ElevatedButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Elevatedbutton(
+    return ElevatedButton(
       onPressed: () {},
       child: Text("Elevated Button"),
       autofocus: true, // Autofocus the button
